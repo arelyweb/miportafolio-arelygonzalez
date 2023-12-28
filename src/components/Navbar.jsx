@@ -9,7 +9,7 @@ const Navbar = () => {
     const toggleMenu = () => setShowMenu(!showMenu);
 
     return (
-        <div className="fixed w-full h-{80px} flex justify-between items-center px-4 bg-black text-white">
+        <div className="fixed w-full h-{80px} flex justify-between items-center px-4 bg-black text-white relative">
         <div>  
             <img src={LOGOARR} alt="Logo Img"/>
         </div>
@@ -22,7 +22,7 @@ const Navbar = () => {
             <li className="p-6">Contacto </li>
         </ul>
             {/*hamburguesa*/}
-            <div onClick={toggleMenu} className="md:hidden z-10">
+            <div onClick={toggleMenu} className="md:hidden z-10 ">
                 {!showMenu ? <FaBars/> : <FaTimes/>}
             </div>
             {/*mobile menu*/}
@@ -34,11 +34,21 @@ const Navbar = () => {
                 <li className="p-6 text-2xl">Contacto</li>
             </ul>
             {/*social media*/}
-            <div className="flex fixed flex-col top-[35%] left-0">
+            <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
                 <ul>
                     <li className="w-[150px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-2px] duration-300 bg-[#0077b5]">
-                        <a className="flex justify-between items-center w-full text-white " href="http://" target="_blank">
+                        <a className="flex ml-5 justify-between items-center w-full text-white " href="http://" target="_blank">
                             Linkedin <FaLinkedin className="m-3" size={30}/>
+                        </a>
+                    </li>
+                    <li className="w-[150px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-2px] duration-300 bg-[#3d3d3d]">
+                        <a className="flex ml-5 justify-between items-center w-full text-white " href="http://" target="_blank">
+                            GitHub <FaGithub className="m-3" size={30}/>
+                        </a>
+                    </li>
+                    <li className="w-[150px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-2px] duration-300 bg-[#59dee5]">
+                        <a className="flex ml-5 justify-between items-center w-full text-white " href="http://" target="_blank">
+                            Email <HiOutlineMail className="m-3" size={30}/>
                         </a>
                     </li>
                 </ul>
